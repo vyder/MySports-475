@@ -10,6 +10,9 @@ require 'bson'
 require 'moped'
 # include Mongoid
 
+# Helpful for debugging
+require 'byebug'
+
 # using sessions
 enable :sessions
 

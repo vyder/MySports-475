@@ -2,7 +2,6 @@
 
 source 'https://rubygems.org'
 
-
 gem "sinatra"
 gem 'sinatra-flash'
 gem 'sinatra-redirect-with-flash'
@@ -16,6 +15,11 @@ gem "mongoid", "~> 3.0.0"
 gem 'moped'
 gem 'bcrypt'
 gem 'activesupport', '3.2.20'
+
+group :debugging do
+  gem "byebug"
+end
+
 
 group :development do
  gem 'sqlite3'
