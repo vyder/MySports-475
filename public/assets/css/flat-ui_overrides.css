@@ -1,0 +1,7 @@
+/* Square fields */
+span.input-group-addon {
+    border-radius: 0px !important;
+}
+input[type=text], input[type=password] {
+    border-radius: 0px !important;
+}

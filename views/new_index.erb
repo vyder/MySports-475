@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MySports</title>
+
+  <!-- 3P JS Resources -->
+  <script type="text/javascript" src="assets/vendor/jquery/js/jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="assets/vendor/jquery/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/vendor/handlebars/js/handlebars.min.js"></script>
+  <script type="text/javascript" src="assets/vendor/chosen/js/chosen.jquery.min.js"></script>
+  <script type="text/javascript" src="assets/vendor/chosen/js/chosen.proto.min.js"></script>
+
+  <!-- 3P CSS Resources -->
+  <link href="assets/vendor/flat-ui/css/vendor/bootstrap.min.css" rel="stylesheet" type="text/css" >
+  <link href="assets/vendor/flat-ui/css/flat-ui.min.css" rel="stylesheet" type="text/css" >
+  <link href="assets/vendor/chosen/css/chosen.min.css" rel="stylesheet" type="text/css" >
+  <link href="assets/css/jquery-ui.css" rel="stylesheet" type="text/css" >
+
+  <!-- Custom CSS + Overrides -->
+  <link href="assets/css/new_styles.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/flat-ui_overrides.css" rel="stylesheet" type="text/css" />
+  <% unless logged_in? %>
+  <link href="assets/css/splashpage_style_overrides.css" rel="stylesheet" type="text/css" />
+  <% end %>
+
+
+  <script src="assets/js/new_index.js" type="text/javascript"></script>
+  <!-- #TODO: Remove unused libs -->
+  <!-- <script src="assets/js/modals.js" type="text/javascript"></script> -->
+  <!-- <script src="assets/js/constants.js" type="text/javascript"></script> -->
+  <!-- <script src="assets/js/form.js" type="text/javascript"></script> -->
+  <!-- <script src="assets/js/handlebars_helpers.js" type="text/javascript"></script> -->
+  <!-- <script src="assets/js/helpers.js" type="text/javascript"></script> -->
+  <!-- <script src="assets/js/chart.js" type="text/javascript"></script> -->
+
+</head>
+<body>
+
+    <div id="container">
+        <div class="header">
+            <h1>MySports</h1>
+        </div>
+
+        <% unless logged_in? %>
+            <%= erb :login_modal %>
+        <% else %>
+            <%= erb :dashboard %>
+        <% end %>
+    </div>
+
+</body>
+</html>

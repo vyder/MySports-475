@@ -36,7 +36,7 @@ get '/' do
   SportsDataApi.set_key(:nhl, 'hkzpaujvak7qmd5qv2468zpd')
   SportsDataApi.set_access_level(:nfl, 't')
   SportsDataApi.set_access_level(:nhl, 't')
-  erb :index
+  erb :new_index
 end
 
 require_relative 'routes/init'

@@ -1,0 +1,36 @@
+div.header {
+    text-align: center;
+    display: none;
+}
+
+div#login-modal {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding-bottom: 30px;
+
+    background-color: #ECF0F1;
+}
+
+div#login-modal > div.form-wrapper {
+    width: 300px;
+    margin: 0px auto;
+    padding: 20px 0px;
+}
+
+div#welcome-text {
+    text-align: center;
+}
+
+div.input-group {
+    margin-bottom: 10px;
+}
+div.input-group:last-child {
+    margin-bottom: 0px;
+}
+
+div#login-modal > div.form-wrapper > button {
+    width: 46%;
+    float: left;
+    margin-left: 10px;
+}

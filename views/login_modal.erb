@@ -1,0 +1,88 @@
+<div id="login-modal">
+    <div id="welcome-text" class="form-wrapper">
+        <h3>Welcome to MySports</h3>
+    </div>
+    <div id="login" class="form-group form-wrapper">
+        <form action="/login" method="POST">
+            <div class="input-group">
+                <!-- <span class="form-control-feedback fui-check"></span> -->
+                <span class="input-group-addon"><span class="fui-user"></span></span>
+                <input name="name" type="text" placeholder="Name" class="form-control" tabindex="1">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><span class="fui-lock"></span></span>
+                <input name="password" type="password" placeholder="Password" class="form-control" tabindex="2">
+            </div>
+            <input type="submit" class="hidden">
+        </form>
+    </div>
+
+    <div id="signup" class="form-group form-wrapper" style="display: none;">
+        <form action="/signup" method="POST">
+            <div class="input-group">
+                <span class="input-group-addon"><span class="fui-user"></span></span>
+                <input name="name" type="text" placeholder="Name" class="form-control">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><span class="fui-lock"></span></span>
+                <input name="password" type="password" placeholder="Password" class="form-control">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><span class="fui-lock"></span></span>
+                <input name="password_confirmation" type="password" placeholder="Confirm Password" class="form-control">
+            </div>
+            <input type="submit" class="hidden">
+        </form>
+    </div>
+
+    <div class="form-wrapper">
+        <button id="signup-button" class="btn" tabindex="4">Sign Up</button>
+        <button id="login-button" class="btn btn-primary" tabindex="3">Log In</button>
+        <div class="clear"></div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var otherAction = function(actionName) {
+                return ( actionName === "signup" ) ? "login" : "signup";
+            };
+
+            $('.input-group').on('focus', '.form-control', function () {
+                $(this).closest('.input-group, .form-group').addClass('focus');
+            }).on('blur', '.form-control', function () {
+                $(this).closest('.input-group, .form-group').removeClass('focus');
+            });
+
+            $('button').click(function() {
+                // 'action' will either be 'login' or 'signup'
+                var action = $(this).attr('id').split('-')[0];
+                console.log(action);
+
+                var primaryButtonClass = "btn-primary";
+                // If this action's button is currently the
+                // primary button, then submit its form
+                if( $(this).hasClass(primaryButtonClass) ) {
+                    // Submit relevant form
+                    $("div.form-group#" + action + "> form").submit();
+                } else {
+                    // Otherwise hide the currently active form
+                    // and show the current action's form
+                    $("div.form-group#" + otherAction(action)).hide();
+                    $("button#" + otherAction(action) + "-button").removeClass(primaryButtonClass);
+
+                    $("div.form-group#" + action).show();
+                    $("button#" + action + "-button").addClass(primaryButtonClass);
+
+                    setFocus();
+                }
+            });
+
+            var setFocus = function() {
+                // Set focus on 'name' field
+                $('input[name=name]').focus();
+            };
+
+            setFocus();
+        });
+    </script>
+</div>

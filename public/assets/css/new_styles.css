@@ -1,0 +1,26 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+}
+
+body {
+	/* background-color: #ECF0F1; */
+}
+
+#container {
+	min-width: 600px;
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+/* Utility Classes */
+
+.clear {
+	clear: both;
+}
+
+.hidden {
+	display: none;
+}
