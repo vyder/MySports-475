@@ -2,34 +2,72 @@
 <div class="pane left">
     <h3>MySports</h3>
     <div class="menu-item">Welcome, <%= current_user.name %></div>
+
     <div class="menu-item">
-        <div class="filters">
-            <span>Filter By:</span>
-            <label class="radio">
-                <input type="radio" name="league_filters" id="filter-all" checked="checked">
-                <span class="filter_name">All Leagues</span>
-            </label>
-            <label class="radio">
-                <input type="radio" name="league_filters" id="filter-nfl">
-                <img class="filter_logo" src="assets/images/logos/nfl_logo_small.png"/>
-                <span class="filter_name">NFL</span>
-            </label>
-            <label class="radio">
-                <input type="radio" name="league_filters" id="filter-nhl">
-                <img class="filter_logo" src="assets/images/logos/nhl/nhl_logo_small.png"/>
-                <span class="filter_name">NHL</span>
-            </label>
-            <label class="radio">
-                <input type="radio" name="league_filters" id="filter-nba">
-                <img class="filter_logo" src="assets/images/logos/nba/nba_logo_small.png"/>
-                <span class="filter_name">NBA</span>
-            </label>
+        <button class="btn btn-primary menu-btn" id="addnew"><span class="fui-plus"></span> Add New</button>
+    </div>
+
+    <div class="menu-item">
+        <span>Filter By: </span>
+        <div class="menu-btn">
+            <button class="btn btn-primary filter" id="filter-all">All Leagues</button>
         </div>
+
+        <div class="menu-btn">
+            <button class="btn btn-default filter" id="filter-nfl">
+                <img class="filter_logo" src="assets/images/logos/nfl_logo_small.png"/>
+                <span>NFL</span>
+            </button>
+        </div>
+
+        <div class="menu-btn">
+            <button class="btn btn-default filter" id="filter-nhl">
+                <img class="filter_logo" src="assets/images/logos/nhl/nhl_logo_small.png"/>
+                <span>NHL</span>
+            </button>
+        </div>
+
+        <div class="menu-btn">
+            <button class="btn btn-default filter" id="filter-nba">
+                <img class="filter_logo" src="assets/images/logos/nba/nba_logo_small.png"/>
+                <span>NBA</span>
+            </button>
+        </div>
+
     </div>
-    <div class="menu-item" id="logout">
-        <a href="/logout">Logout</a>
+
+    <div class="menu-item">
+        <form action="/logout" class="menu-btn">
+            <button class="btn btn-default menu-btn" id="logout"><span class="fui-exit"></span> Logout</button>
+            <input type="submit" style="display:none;">
+        </form>
     </div>
+
 </div>
+<script charset="utf-8">
+    $(document).ready(function() {
+        $("#addnew").click(function() {
+            // #TODO: Create a new stats card
+            console.log("Adding a new card...");
+        });
+
+        $(".filter").click(function() {
+            // Style the filters correctly
+            $(".filter").removeClass("btn-primary").addClass("btn-default");
+            $(this).addClass("btn-primary");
+
+            // Apply the filter to cards
+            var filter = $(this).attr('id').split("filter-")[1];
+            // #TODO: Apply this filter
+
+            console.log(filter);
+        });
+
+        $("#logout").click(function() {
+            $(this).parent().submit();
+        });
+    });
+</script>
 <div class="pane right">
 
 </div>

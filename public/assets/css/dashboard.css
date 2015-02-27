@@ -1,8 +1,17 @@
 div.pane.left {
     padding-left: 50px;
+    width: 240px;
 }
 
-div.menu-item {
+div.pane.left div.menu-item > button,
+div.pane.left div.menu-item .menu-btn > button {
+    width: 60%;
+}
+div.pane.left div.menu-item .menu-btn {
+    margin: 5px 0px;
+}
+
+div.pane.left div.menu-item {
     margin-top: 20px;
 }
 
