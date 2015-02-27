@@ -20,10 +20,6 @@
   <!-- Custom CSS + Overrides -->
   <link href="assets/css/new_styles.css" rel="stylesheet" type="text/css" />
   <link href="assets/css/flat-ui_overrides.css" rel="stylesheet" type="text/css" />
-  <% unless logged_in? %>
-  <link href="assets/css/splashpage_style_overrides.css" rel="stylesheet" type="text/css" />
-  <% end %>
-
 
   <script src="assets/js/new_index.js" type="text/javascript"></script>
   <!-- #TODO: Remove unused libs -->
@@ -36,18 +32,10 @@
 
 </head>
 <body>
-
-    <div id="container">
-        <div class="header">
-            <h1>MySports</h1>
-        </div>
-
-        <% unless logged_in? %>
-            <%= erb :login_modal %>
-        <% else %>
-            <%= erb :dashboard %>
-        <% end %>
-    </div>
-
+    <% unless logged_in? %>
+        <%= erb :splash_page %>
+    <% else %>
+        <%= erb :dashboard %>
+    <% end %>
 </body>
 </html>
