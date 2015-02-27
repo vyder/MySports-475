@@ -1,7 +1,34 @@
 <link href="assets/css/dashboard.css" rel="stylesheet" type="text/css" />
 <div class="pane left">
     <h3>MySports</h3>
-    <a href="/logout">Logout</a>
+    <div class="menu-item">Welcome, <%= current_user.name %></div>
+    <div class="menu-item">
+        <div class="filters">
+            <span>Filter By:</span>
+            <label class="radio">
+                <input type="radio" name="league_filters" id="filter-all" checked="checked">
+                <span class="filter_name">All Leagues</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="league_filters" id="filter-nfl">
+                <img class="filter_logo" src="assets/images/logos/nfl_logo_small.png"/>
+                <span class="filter_name">NFL</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="league_filters" id="filter-nhl">
+                <img class="filter_logo" src="assets/images/logos/nhl/nhl_logo_small.png"/>
+                <span class="filter_name">NHL</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="league_filters" id="filter-nba">
+                <img class="filter_logo" src="assets/images/logos/nba/nba_logo_small.png"/>
+                <span class="filter_name">NBA</span>
+            </label>
+        </div>
+    </div>
+    <div class="menu-item" id="logout">
+        <a href="/logout">Logout</a>
+    </div>
 </div>
 <div class="pane right">
 

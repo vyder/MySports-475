@@ -1,0 +1,29 @@
+div.pane.left {
+    padding-left: 50px;
+}
+
+div.menu-item {
+    margin-top: 20px;
+}
+
+div.filters label.radio {
+    cursor: pointer;
+}
+span.filter_name {
+    font-size: 1.2em;
+}
+
+/* Special margin-tops to vertically
+   align radio buttons for different
+   league logos */
+input[type=radio]#filter-nfl {
+    margin-top: 11px;
+}
+
+input[type=radio]#filter-nhl {
+    margin-top: 11px;
+}
+
+input[type=radio]#filter-nba {
+    margin-top: 27px;
+}
